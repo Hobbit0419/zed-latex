@@ -71,6 +71,20 @@
     "tags": ["latex-build"]
   },
   {
+    "label": "xelatex (single pass)",
+    "command": "xelatex",
+    "args": [
+      "-synctex=1",
+      "-file-line-error",
+      "-interaction=nonstopmode",
+      "-halt-on-error",
+      "-recorder",
+      "$ZED_FILENAME"
+    ],
+    "cwd": "$ZED_DIRNAME",
+    "tags": ["latex-build"]
+  },
+  {
     "label": "tectonic",
     "command": "tectonic",
     "args": [

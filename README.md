@@ -37,6 +37,7 @@ From the run button in LaTeX files, you can use:
 - `latexmk (!TEX root aware)`
 - `pdflatex (single pass)`
 - `lualatex (single pass)`
+- `xelatex (single pass)`
 - `tectonic`
 
 The `!TEX root aware` task reads `% !TEX root = ...` from the current file before building.
