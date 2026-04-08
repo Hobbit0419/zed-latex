@@ -506,8 +506,8 @@ dependencies = [
 ]
 
 [[package]]
-name = "latex"
-version = "0.3.0"
+name = "latex-smart"
+version = "0.1.0"
 dependencies = [
  "chrono",
  "serde",

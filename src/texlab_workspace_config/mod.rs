@@ -97,7 +97,9 @@ fn add_build_default(input_settings: TexlabSettings) -> TexlabSettings {
                 args: Some(vec![
                     "-e".into(),
                     "$pdf_mode = 1 unless $pdf_mode != 0; if ($ARGV[-1] =~ /\\.log$/ or $ARGV[-1] =~ /latexmkrc$/) { exit 0; };".into(),
+                    "-file-line-error".into(),
                     "-interaction=nonstopmode".into(),
+                    "-halt-on-error".into(),
                     "-synctex=1".into(),
                     "%f".into(),
                 ]),

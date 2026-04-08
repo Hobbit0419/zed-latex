@@ -1,15 +1,13 @@
-id = "latex"
-name = "LaTeX"
-version = "0.3.1-dev"
+id = "latex-smart"
+name = "LaTeX Smart"
+version = "0.1.0"
 schema_version = 1
 authors = [
-    "Ruben Zukic <ruben@zukic.net>",
-    "Oli Callaghan <me@olicallaghan.com>",
-    "Luke Naylor <luke.naylr@gmail.com>",
-    "Jan Solanti <jhs@psonet.com>",
+    "Anton",
 ]
-description = "LaTeX language server and syntax highlighting for Zed. See wiki on GitHub for help."
-repository = "https://github.com/rzukic/zed-latex"
+description = "Smart LaTeX workflow for Zed with improved build tasks, diagnostics defaults, and writing snippets."
+repository = "https://github.com/anton/zed-latex-plugin"
+snippets = ["snippets/latex.json", "snippets/bibtex.json"]
 
 [language_servers.texlab]
 name = "TexLab (Latex Language Server)"

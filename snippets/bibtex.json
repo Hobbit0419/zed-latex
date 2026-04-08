@@ -1,0 +1,58 @@
+{
+  "Article": {
+    "prefix": "art",
+    "body": [
+      "@article{${1:key},",
+      "  author  = {${2:Author}},",
+      "  title   = {${3:Title}},",
+      "  journal = {${4:Journal}},",
+      "  year    = {${5:2026}},",
+      "  volume  = {${6:1}},",
+      "  number  = {${7:1}},",
+      "  pages   = {${8:1--10}},",
+      "  doi     = {${9:10.xxxx/xxxx}}",
+      "}"
+    ],
+    "description": "Insert @article entry"
+  },
+  "Book": {
+    "prefix": "book",
+    "body": [
+      "@book{${1:key},",
+      "  author    = {${2:Author}},",
+      "  title     = {${3:Book Title}},",
+      "  publisher = {${4:Publisher}},",
+      "  year      = {${5:2026}},",
+      "  edition   = {${6:1}}",
+      "}"
+    ],
+    "description": "Insert @book entry"
+  },
+  "InProceedings": {
+    "prefix": "inpro",
+    "body": [
+      "@inproceedings{${1:key},",
+      "  author    = {${2:Author}},",
+      "  title     = {${3:Title}},",
+      "  booktitle = {${4:Conference}},",
+      "  year      = {${5:2026}},",
+      "  pages     = {${6:1--10}},",
+      "  doi       = {${7:10.xxxx/xxxx}}",
+      "}"
+    ],
+    "description": "Insert @inproceedings entry"
+  },
+  "Misc": {
+    "prefix": "misc",
+    "body": [
+      "@misc{${1:key},",
+      "  author       = {${2:Author}},",
+      "  title        = {${3:Title}},",
+      "  howpublished = {${4:URL}},",
+      "  year         = {${5:2026}},",
+      "  note         = {${6:Accessed: 2026-01-01}}",
+      "}"
+    ],
+    "description": "Insert @misc entry"
+  }
+}

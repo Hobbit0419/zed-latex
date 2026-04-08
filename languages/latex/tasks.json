@@ -1,29 +1,86 @@
 [
   {
-    "label": "latexmk",
+    "label": "latexmk (current file)",
     "command": "latexmk",
-    "args": ["-synctex=1", "-e", "\"\\$pdf_mode = 1 unless \\$pdf_mode != 0;\"", "-recorder", "$ZED_FILENAME"],
+    "args": [
+      "-synctex=1",
+      "-file-line-error",
+      "-interaction=nonstopmode",
+      "-halt-on-error",
+      "-e",
+      "\"\\$pdf_mode = 1 unless \\$pdf_mode != 0;\"",
+      "-recorder",
+      "$ZED_FILENAME"
+    ],
     "cwd": "$ZED_DIRNAME",
     "tags": ["latex-build"]
   },
   {
-    "label": "latexmk (watch)",
+    "label": "latexmk (watch current file)",
     "command": "latexmk",
-    "args": ["-pvc", "-synctex=1", "-e", "\"\\$pdf_mode = 1 unless \\$pdf_mode != 0;\"", "-recorder", "$ZED_FILENAME"],
+    "args": [
+      "-pvc",
+      "-synctex=1",
+      "-file-line-error",
+      "-interaction=nonstopmode",
+      "-halt-on-error",
+      "-e",
+      "\"\\$pdf_mode = 1 unless \\$pdf_mode != 0;\"",
+      "-recorder",
+      "$ZED_FILENAME"
+    ],
     "cwd": "$ZED_DIRNAME",
     "tags": ["latex-build"]
   },
   {
-    "label": "pdflatex",
+    "label": "latexmk (!TEX root aware)",
+    "command": "sh",
+    "args": [
+      "-lc",
+      "root=$(sed -n -e 's/^% !TEX root[[:space:]]*=[[:space:]]*//p' \"$ZED_FILENAME\" | head -n1); if [ -z \"$root\" ]; then root=\"$ZED_FILENAME\"; fi; latexmk -synctex=1 -file-line-error -interaction=nonstopmode -halt-on-error -e '\\$pdf_mode = 1 unless \\$pdf_mode != 0;' -recorder \"$root\""
+    ],
+    "cwd": "$ZED_DIRNAME",
+    "tags": ["latex-build"]
+  },
+  {
+    "label": "pdflatex (single pass)",
     "command": "pdflatex",
-    "args": ["-synctex=1", "-recorder", "$ZED_FILENAME"],
+    "args": [
+      "-synctex=1",
+      "-file-line-error",
+      "-interaction=nonstopmode",
+      "-halt-on-error",
+      "-recorder",
+      "$ZED_FILENAME"
+    ],
     "cwd": "$ZED_DIRNAME",
     "tags": ["latex-build"]
   },
   {
-    "label": "lualatex",
+    "label": "lualatex (single pass)",
     "command": "lualatex",
-    "args": ["--synctex=1", "--recorder", "$ZED_FILENAME"],
+    "args": [
+      "--synctex=1",
+      "--file-line-error",
+      "--interaction=nonstopmode",
+      "--halt-on-error",
+      "--recorder",
+      "$ZED_FILENAME"
+    ],
+    "cwd": "$ZED_DIRNAME",
+    "tags": ["latex-build"]
+  },
+  {
+    "label": "tectonic",
+    "command": "tectonic",
+    "args": [
+      "-X",
+      "compile",
+      "--synctex",
+      "--keep-logs",
+      "--keep-intermediates",
+      "$ZED_FILENAME"
+    ],
     "cwd": "$ZED_DIRNAME",
     "tags": ["latex-build"]
   }
